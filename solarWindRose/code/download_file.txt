@@ -1,0 +1,6 @@
+open ssd.jpl.nasa.gov
+ftp
+ftp
+cd /pub/ssd/
+get wld1519.15
+quit
