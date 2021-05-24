@@ -1,0 +1,83 @@
+#!/usr/bin/expect
+
+# Select planet Mercury 199, Venus 299, etc (not Earth)
+# set OBJECT 899
+# Planet number must be passed when expect_horizon is called 
+# e.g. ./expect_horizon 899
+set OBJECT [lindex $argv 0]
+
+# Set start and end date for data
+set START "2021-May-17 00:00"
+set END "2021-May-24 00:00"
+
+
+#Select place to observe from
+set COORD_CENTER 500@599
+
+set timeout 5
+spawn telnet horizons.jpl.nasa.gov 6775
+
+expect "Horizons> "
+send -- "$OBJECT\n"
+
+expect "Select"
+send -- "e\n"
+
+expect "Observe"
+send -- "v\n"
+
+expect "Coordinate"
+send -- "$COORD_CENTER\n"
+
+expect "Confirm"
+send -- "y\n"
+
+expect "Reference"
+send -- "f\n"
+
+expect "Starting"
+send -- "$START\n"
+
+expect "Ending"
+send -- "$END\n"
+
+expect "Output"
+send -- "1d\n"
+
+expect "Accept"
+send -- "n\n"
+
+expect "Output"
+send -- "\n"
+
+expect "Corrections"
+send -- "\n"
+
+expect "Output"
+send -- "\n"
+
+expect "Spreadsheet"
+send -- "y\n"
+
+expect "Output"
+send -- "\n"
+
+expect "Select"
+send -- "\n"
+
+expect ""
+send -- "q\n"
+
+expect ">>> Select..."
+send -- "f\n"
+
+expect "File name   :  "
+expect "\n"
+set file [open "../data/ephemeris_file_name.txt" w]
+puts $file $expect_out(buffer)
+close $file
+
+expect ">>> Select..."
+send -- "x\n"
+
+expect eof

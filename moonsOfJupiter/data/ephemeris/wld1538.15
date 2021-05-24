@@ -1,0 +1,70 @@
+*******************************************************************************
+Ephemeris / PORT_LOGIN Mon May 24 14:30:24 2021 Pasadena, USA    / Horizons
+*******************************************************************************
+Target body name: 2011J1 (572)                    {source: jup344_merged}
+Center body name: Jupiter (599)                   {source: jup344_merged}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2021-May-17 00:00:00.0000 TDB
+Stop  time      : A.D. 2021-May-24 00:00:00.0000 TDB
+Step-size       : 1440 minutes
+*******************************************************************************
+Center geodetic : 0.00000000,0.00000000,0.0000000 {W-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.00000000,0.00000000,0.0000000 {W-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 71492.0 x 71492.0 x 66854.0 km  {Equator, meridian, pole}    
+Output units    : AU-D
+Output type     : GEOMETRIC cartesian states
+Output format   : 3 (position, velocity, LT, range, range-rate)
+Reference frame : ICRF
+*******************************************************************************
+            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,                     LT,                     RG,                     RR,
+**************************************************************************************************************************************************************************************************************************************************************************
+$$SOE
+2459351.500000000, A.D. 2021-May-17 00:00:00.0000,  5.785213006515196E-02,  1.817038391819410E-01,  2.526231211214238E-02,  1.028511390455375E-03, -7.465068968096203E-06, -9.256197695641619E-05,  1.110963227578882E-03,  1.923573199537341E-01,  2.901205605520309E-04,
+2459352.500000000, A.D. 2021-May-18 00:00:00.0000,  5.887870570034977E-02,  1.816933827745650E-01,  2.516960241979220E-02,  1.024300262499723E-03, -1.413886843062215E-05, -9.319419513827228E-05,  1.112633725804230E-03,  1.926465577553448E-01,  2.875466589007778E-04,
+2459353.500000000, A.D. 2021-May-19 00:00:00.0000,  5.990181073049403E-02,  1.816751936540395E-01,  2.507576512079001E-02,  1.021977968486979E-03, -2.163180674347180E-05, -9.418969053658789E-05,  1.114284402551612E-03,  1.929323635744343E-01,  2.846929804078645E-04,
+2459354.500000000, A.D. 2021-May-20 00:00:00.0000,  6.092171985153234E-02,  1.816499756146404E-01,  2.498113710844113E-02,  1.018110037069492E-03, -2.936554806142538E-05, -9.533103187408182E-05,  1.115919622732519E-03,  1.932154931719989E-01,  2.810814231177154E-04,
+2459355.500000000, A.D. 2021-May-21 00:00:00.0000,  6.193880881143356E-02,  1.816169772265842E-01,  2.488535803349906E-02,  1.015540773381107E-03, -3.625370659323551E-05, -9.605783463848276E-05,  1.117535538418903E-03,  1.934952802999504E-01,  2.786975656845383E-04,
+2459356.500000000, A.D. 2021-May-22 00:00:00.0000,  6.295237568606925E-02,  1.815765426165000E-01,  2.478856969469087E-02,  1.012386355708079E-03, -4.484793906328077E-05, -9.761705144152126E-05,  1.119132659696111E-03,  1.937718132768288E-01,  2.743897809656772E-04,
+2459357.500000000, A.D. 2021-May-23 00:00:00.0000,  6.396394848029732E-02,  1.815283519093868E-01,  2.469064037924223E-02,  1.010099355941471E-03, -5.143158849112985E-05, -9.820453761023301E-05,  1.120711867651680E-03,  1.940452446582121E-01,  2.723535886689121E-04,
+2459358.500000000, A.D. 2021-May-24 00:00:00.0000,  6.497273648565788E-02,  1.814730301072086E-01,  2.459185142936280E-02,  1.007963585117242E-03, -5.884969413995627E-05, -9.919382973208036E-05,  1.122275151124806E-03,  1.943159188009321E-01,  2.695155419390644E-04,
+$$EOE
+**************************************************************************************************************************************************************************************************************************************************************************
+Coordinate system description:
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)                           
+      VY     Y-component of velocity vector (au/day)                           
+      VZ     Z-component of velocity vector (au/day)                           
+      LT     One-way down-leg Newtonian light-time (day)
+      RG     Range; distance from coordinate center (au)
+      RR     Range-rate; radial velocity wrt coord. center (au/day)
+
+Geometric states/elements have no aberrations applied.
+
+
+ Computations by ...
+     Solar System Dynamics Group, Horizons On-Line Ephemeris System
+     4800 Oak Grove Drive, Jet Propulsion Laboratory
+     Pasadena, CA  91109   USA
+     Information  : https://ssd.jpl.nasa.gov/
+     Documentation: https://ssd.jpl.nasa.gov/?horizons_doc
+     Connect      : https://ssd.jpl.nasa.gov/?horizons (browser)
+                    telnet ssd.jpl.nasa.gov 6775       (command-line)
+                    e-mail command interface available
+                    Script and CGI interfaces available
+     Author       : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************
