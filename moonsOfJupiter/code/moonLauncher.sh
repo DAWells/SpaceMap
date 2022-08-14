@@ -1,11 +1,32 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# First positional argument is a folder in data/
+# which contains a text file, moon_list.txt, with
+# a single ephemeris ID on each line
+
+mapfile -t variables < data/$1/input.txt
+declare "${variables[@]}"
+
+# Load moons
+# readarray -t moons < data/moons_jupiter.txt
+# readarray -t moons < data/uranus/moon_list.txt
+# For some fucking reason the array is not quite the same 
+# if it's not defined manually
+# readarray moons < data/${1}/moon_list.txt
+
+#uranus
+moons=(723 716 720 721 717 724 718 719)
+
+rm data/$1/ephemeris/*
 
 #moonLauncher
-for I in 501	502	503	504 505	514	515	516 506	507	508	509	510	511	512	513	517	518	519	520	521	522	523	524	525	526	527	528	529	530	531	532	533	534	535	536	537	538	539	540	541	542	543	544	545	546	547	548	549	550	551	552	553 55060	55061	55062	55063	55064	55065	55066	55067	55068	55069	55070	55071	55074	55075
-do
+for I in ${moons[@]};do
 	echo $I
-	./expect_horizon $I
-	python ./write_ftp_instructions_bash.py
-	../data/ftp_instructions_bash.sh
+	code/expect_horizon $I $COORD_CENTER $START $END $INTERVAL
+	python3 code/write_ftp_instructions_bash.py $1
+	data/ftp_instructions_bash.sh
 	echo "We didn't use that moon anyway."
 done
+
+# Plot
+python3 code/plot_fig.py $1

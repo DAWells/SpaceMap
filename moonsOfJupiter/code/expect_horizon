@@ -6,13 +6,18 @@
 # e.g. ./expect_horizon 899
 set OBJECT [lindex $argv 0]
 
-# Set start and end date for data
-set START "2021-May-17 00:00"
-set END "2021-May-24 00:00"
-
-
 #Select place to observe from
-set COORD_CENTER 500@599
+# set COORD_CENTER 500@799
+set COORD_CENTER [lindex $argv 1]
+
+# Set start and end date for data
+# set START "2022-August-07 00:00"
+# set END "2023-August-24 00:00"
+set START [lindex $argv 2]
+set END [lindex $argv 3]
+
+# interval between readings
+set INTERVAL [lindex $argv 4]
 
 set timeout 5
 spawn telnet horizons.jpl.nasa.gov 6775
@@ -36,13 +41,13 @@ expect "Reference"
 send -- "f\n"
 
 expect "Starting"
-send -- "$START\n"
+send -- "${START}"
 
 expect "Ending"
-send -- "$END\n"
+send -- "${END}"
 
 expect "Output"
-send -- "1d\n"
+send -- "$INTERVAL"
 
 expect "Accept"
 send -- "n\n"
@@ -73,7 +78,7 @@ send -- "f\n"
 
 expect "File name   :  "
 expect "\n"
-set file [open "../data/ephemeris_file_name.txt" w]
+set file [open "data/ephemeris_file_name.txt" w]
 puts $file $expect_out(buffer)
 close $file
 

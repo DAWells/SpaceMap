@@ -1,19 +1,22 @@
 import os
+import sys
 
-os.chdir("../data")
+# First positional argument is a folder in data/
+folder = sys.argv[1]
 
 # Open file with ephemeris file name
-with open("ephemeris_file_name.txt", "r") as f:
+with open("data/ephemeris_file_name.txt", "r") as f:
     # The name is the first line,
     # strip the white space
     ephemeris_file_name = f.readlines()[0].strip()
+
 ephemeris_file_name
 
 instructions = [
-    "#!/bin/sh\n",
+    "#!/usr/bin/env bash\n",
     "HOST='ssd.jpl.nasa.gov'\n",
     "USER='ftp'\n",
-    "PASSWD='yeohwells@gmail.com'\n",
+    "PASSWD='spacemap@gmail.com'\n",
     "FILE='%s'\n"%(ephemeris_file_name),
     "\n",
     "ftp -n $HOST <<END_SCRIPT\n",
@@ -22,12 +25,12 @@ instructions = [
     "pass\n",
     "cd /pub/ssd/\n",
 #     "get $FILE ephemeris/%s\n" %(ephemeris_file_name),
-    "get $FILE ../data/ephemeris/$FILE\n",
+    "get $FILE data/%s/ephemeris/$FILE\n"%folder,
     "quit\n",
     "END_SCRIPT\n",
     "exit 0\n"
 ]
 
-with open("ftp_instructions_bash.sh", "wb") as f:
+with open("data/ftp_instructions_bash.sh", "wb") as f:
     for instruction in instructions:
         f.write(bytes(instruction, "UTF-8"))
