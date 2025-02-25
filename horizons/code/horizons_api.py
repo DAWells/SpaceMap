@@ -148,10 +148,11 @@ def load_physical_data(filepath):
     with open(filepath, "r") as ephemeris:
         lines = ephemeris.readlines()
     #Get line number with start and end of ephemeris symbol
-    start = [i for i,line in enumerate(lines) if line.startswith((" PHYSICAL DATA", " GEOPHYSICAL PROPERTIES"))][0]
-    end = [i for i,line in enumerate(lines) if re.search("[Aa]phelion", line)][0]
+    start = [i for i,line in enumerate(lines) if line.startswith((" PHYSICAL", " GEOPHYSICAL", " SATELLITE PHYSICAL PROPERTIES"))][0]
+    end = [i for i,line in enumerate(lines) if re.search("[Aa]phelion|SATELLITE ORBIT|Sunspot", line)][0]
     lines = lines[start+1:end]
-    pattern = r'(\w+[\w\s\(\)\^\/\-\[\]\.]+\s*)+\s*=\s*(-?\d+\.?\d*)'
+    lines = [line.replace("~","") for line in lines]
+    pattern = r'(\w+[\w\s\(\)\^\/\-\[\]\.,]+\s*)+\s*=\s*(-?\d+\.?\d*)'
     KVs = [re.findall(pattern, line) for line in lines]
     flattened_list = list(itertools.chain(*KVs))
     physical_data = {}
