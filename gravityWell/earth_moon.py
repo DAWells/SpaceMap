@@ -1,4 +1,4 @@
-"""Jupiter's Galilean moons gravity"""
+"""Earth and moon's gravity"""
 
 import re
 import numpy as np
@@ -10,9 +10,9 @@ from matplotlib.ticker import LogLocator
 
 
 res = 500
-# galilean moons, and Jupiter
+# Earth, moon and, sun
 codes = [10, 399, 301]
-# From center of Jupiter
+# From center of Earth
 center = "500@399"
 
 for object in codes:

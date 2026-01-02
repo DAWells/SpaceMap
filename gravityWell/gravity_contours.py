@@ -61,6 +61,15 @@ plt.scatter(planet_data.X, planet_data.Y, s=planet_data.normalised_mass*10000)
 plt.show()
 
 ###########################
+#
+#   eg data
+#
+###########################
+
+
+
+
+# ##########################
 #                         #
 #    Calculate gravity    #
 #                         #
@@ -68,11 +77,18 @@ plt.show()
 
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from matplotlib.ticker import LinearLocator
+# from matplotlib.ticker import LinearLocator
 import numpy as np
+import pandas as pd
 
 fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
 
+planet_data = pd.DataFrame([
+        [0,0],
+        [100,100]
+    ],
+    columns=["X", "Y"]
+)
 # Make data.
 X = np.linspace(planet_data.X.min(), planet_data.X.max(), 50)
 Y = np.linspace(planet_data.Y.min(), planet_data.Y.max(), 50)
@@ -86,7 +102,7 @@ surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
 
 # Customize the z axis.
 ax.set_zlim(-1.01, 1.01)
-ax.zaxis.set_major_locator(LinearLocator(10))
+# ax.zaxis.set_major_locator(LinearLocator(10))
 # A StrMethodFormatter is used automatically
 ax.zaxis.set_major_formatter('{x:.02f}')
 
@@ -103,7 +119,7 @@ plt.show()
 ##############
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from matplotlib.ticker import LinearLocator
+# from matplotlib.ticker import LinearLocator
 import numpy as np
 
 fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
