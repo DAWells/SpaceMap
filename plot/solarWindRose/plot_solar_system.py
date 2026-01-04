@@ -36,7 +36,6 @@ radii = np.cbrt(planets.distance)
 radii = radii/radii.max()
 #Fixed area of bars (ignoring curvature)
 fab = np.pi/10
-width = [fab]*8
 width = fab/np.cbrt(radii)
 colours = planets.body_code.apply(lambda x: planetary_colours[x])
 
@@ -92,4 +91,7 @@ for i,row in planetmasses.reset_index(drop=True).iterrows():
         s=row['Vol. Mean Radius (km)']/200
 )
 
-plt.show()
+# plt.show()
+
+fig.set_size_inches(25,15)
+plt.savefig("data/images/solarWindRose.png", facecolor=fig.get_facecolor(), edgecolor="none", dpi=300)
