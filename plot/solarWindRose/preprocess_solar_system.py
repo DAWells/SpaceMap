@@ -25,4 +25,4 @@ for code in codes:
 ephemeris = pd.concat(ephemeris)
 ephemeris = ephemeris.drop_duplicates(subset=["body_code"])
 
-ephemeris.to_csv("data/processed/solarWindRose/planets.csv")
+ephemeris.to_csv("data/processed/solarWindRose/planets.csv", index=False)
