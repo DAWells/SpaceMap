@@ -92,5 +92,5 @@ for i,row in planetmasses.reset_index(drop=True).iterrows():
 
 # plt.show()
 
-fig.set_size_inches(25,15)
+fig.set_size_inches(10,6)
 plt.savefig("data/images/solarWindRose.png", facecolor=fig.get_facecolor(), edgecolor="none", dpi=300)

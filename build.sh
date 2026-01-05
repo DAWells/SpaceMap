@@ -1,3 +1,7 @@
+mkdir -p data/external/solarWindRose
+mkdir data/images
+mkdir -p data/processed/solarWindRose
+
 echo "Download solar system"
 python -m plot.solarWindRose.download_solar_system
 echo "Preprocess solar system"
