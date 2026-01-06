@@ -1,6 +1,8 @@
 /* ================================
    GLOBAL BASE STYLES
 ================================ */
+html { height: 100%; }
+
 body {
     margin: 0;
     font-family: "Poppins", "Inter", Arial, sans-serif;
@@ -11,46 +13,14 @@ body {
 
 /* Flat layered cosmic background */
 .flat-bg {
-    background: linear-gradient(to bottom, #0b0e1a 0%, #11182c 40%, #1a2340 100%);
+    /* background: linear-gradient(to bottom, #f8f8f8 0%, #11182c 40%, #1a2340 100%); */
+    background: linear-gradient(
+        162deg,
+        rgb(30, 34, 36) 0%,
+        rgb(39, 32, 38) 59%,
+        rgb(46, 44, 42) 100%
+    );
     position: relative;
-    overflow-x: hidden;
-}
-
-/* Layered horizon shapes */
-.flat-bg::before,
-.flat-bg::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 200%;
-    height: 40vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.25;
-}
-
-/* First layer – distant planet curve */
-.flat-bg::before {
-    bottom: 0;
-    background-image: radial-gradient(
-        ellipse at center,
-        #24345c 0%,
-        #1a2340 60%,
-        transparent 70%
-    );
-    transform: translateX(-25%);
-}
-
-/* Second layer – abstract data hills */
-.flat-bg::after {
-    bottom: -10vh;
-    background-image: radial-gradient(
-        ellipse at center,
-        #2d3f6b 0%,
-        #1a2340 70%,
-        transparent 80%
-    );
-    transform: translateX(-10%);
 }
 
 /* ================================
@@ -96,18 +66,18 @@ body {
 }
 
 .card {
-    background: #1c2541;
+    background: #100d13;
     padding: 2rem;
     border-radius: 14px;
     text-decoration: none;
     color: #e8ecf2;
-    border: 2px solid #2a3558;
+    border: 2px solid #1e1922;
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    background: #222d4d;
+    background: #3C3741;
 }
 
 .card h2 {
@@ -124,10 +94,9 @@ body {
    CONTENT PANELS (SUB-PAGES)
 ================================ */
 .panel {
-    background: #1c2541;
+    background: #100d13;
     padding: 2rem;
-    border-radius: 14px;
-    border: 2px solid #2a3558;
+    border: 2px solid #1e1922;
     margin-top: 2rem;
     position: relative;
     z-index: 2;
