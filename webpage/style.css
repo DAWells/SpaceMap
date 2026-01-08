@@ -1,0 +1,147 @@
+/* ================================
+   GLOBAL BASE STYLES
+================================ */
+html { height: 100%; }
+
+body {
+    margin: 0;
+    font-family: "Poppins", "Inter", Arial, sans-serif;
+    background: #0b0e1a;
+    color: #e8ecf2;
+    line-height: 1.6;
+}
+
+/* Flat layered cosmic background */
+.flat-bg {
+    /* background: linear-gradient(to bottom, #f8f8f8 0%, #11182c 40%, #1a2340 100%); */
+    background: linear-gradient(
+        162deg,
+        rgb(30, 34, 36) 0%,
+        rgb(39, 32, 38) 59%,
+        rgb(46, 44, 42) 100%
+    );
+    position: relative;
+}
+
+/* ================================
+   HEADER / HERO SECTIONS
+================================ */
+.hero,
+.sub-hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1,
+.sub-hero h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.hero p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* ================================
+   CARD GRID (HOME PAGE)
+================================ */
+.container {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #100d13;
+    padding: 2rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #e8ecf2;
+    border: 2px solid #1e1922;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: #3C3741;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.card p {
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* ================================
+   CONTENT PANELS (SUB-PAGES)
+================================ */
+.panel {
+    background: #100d13;
+    padding: 2rem;
+    border: 2px solid #1e1922;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.content img {
+    width: 100%;
+    max-width: 650px;
+    display: block;
+    margin: 0 auto 2rem;
+    border-radius: 10px;
+}
+
+/* ================================
+   TEXT
+================================ */
+p {
+    font-size: 1.1rem;
+}
+
+/* ================================
+   BACK LINK
+================================ */
+.back {
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    color: #8ab4ff;
+    font-weight: 600;
+}
+
+.back:hover {
+    color: #bcd4ff;
+}
+
+/* ================================
+   RESPONSIVE TWEAKS
+================================ */
+@media (max-width: 600px) {
+    .hero h1,
+    .sub-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
