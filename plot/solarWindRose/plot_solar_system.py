@@ -35,7 +35,7 @@ radii = np.cbrt(planets.distance)
 radii = radii/radii.max()
 #Fixed area of bars (ignoring curvature)
 fab = np.pi/10
-width = fab/np.cbrt(radii)
+width = fab/radii
 colours = planets.body_code.apply(lambda x: planetary_colours[x])
 
 # Create figure
