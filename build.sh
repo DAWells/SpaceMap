@@ -12,7 +12,7 @@ python -m plot.solarWindRose.plot_solar_system
 mkdir public
 cp data/images/* public
 cp webpage/index.html public
-cp webpage/completetemplate.html public
+cp webpage/solarsignpost.html public
 cp webpage/style.css public
 
 echo "Build complete"
